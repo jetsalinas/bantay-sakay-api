@@ -17,9 +17,11 @@ app = Flask(__name__)
 # APP #
 #######
 
+trains = Trains()
+
 @app.route('/api/trains', methods=['GET'])
 def get_trains():
-    pass
+    return jsonify(trains.getAllTrainsDict())
 
 stations = Stations()
 
