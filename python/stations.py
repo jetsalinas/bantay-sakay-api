@@ -1,14 +1,13 @@
-from flask import jsonify
-
 class Station:
     
-    def __init__(self, index, name, latitude, longitude, position, load):
+    def __init__(self, index, name, latitude, longitude, position, load, comment=None):
         self.index = index
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.position = position
         self.load = load
+        self.comment = comment
 
     def toDict(self):
         return {
