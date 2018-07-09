@@ -1,12 +1,11 @@
-
 stations = {
-    "0": {
-        "name": "Baclaran",
-        "latitude": 0,
-        "longitude": 0,
-        "position": 0,
-        "stationLoad": 0
-    },
+        "0": {
+            "name": "Baclaran",
+            "latitude": 0,
+            "longitude": 0,
+            "position": 0,
+            "stationLoad": 0
+        },
         "1": {
             "name": "EDSA",
             "latitude": 0,
@@ -84,56 +83,56 @@ stations = {
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "12": {
             "name": "Tayuman",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "13": {
             "name": "Blumentritt",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "14": {
             "name": "Abad Santos",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "15": {
             "name": "R. Papa",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "16": {
             "name": "5th Avenue",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "17": {
             "name": "Monumento",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "18": {
             "name": "Balitntawak",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "10": {
+        "19": {
             "name": "Roosevelt",
             "latitude": 0,
             "longitude": 0,
