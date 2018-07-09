@@ -5,19 +5,27 @@ RESTFUL api for Hackatren Bantay Sakay app
 :Version:    v20180709
 """
 
-
 from flask import Flask
 
+import json
+
 app = Flask(__name__)
-
-
-
-
 
 #######
 # APP #
 #######
 
+@app.route('/api/trains', methods=['GET'])
+def get_trains():
+    pass
+
+@app.route('/api/stations', methods=['GET'])
+def get_station_statistics():
+    pass
+
+@app.route('/api/statistics', metods=['GET'])
+def get_global_statistics():
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True)
