@@ -16,3 +16,10 @@ class Train:
             "comment": self.comment
         }
 
+class Trains:
+
+    def __init__(self):
+        self.trains = [
+            Train(0, "ABC", 0, 0)
+        ]
+
