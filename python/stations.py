@@ -23,145 +23,35 @@ class Station:
     def toJson(self):
         return jsonify(self.toDict())
 
-stations = {
-        "0": {
-            "name": "Baclaran",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "1": {
-            "name": "EDSA",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-       "2": {
-            "name": "Libertad",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "3": {
-            "name": "Gil Puyat",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "4": {
-            "name": "Vito Cruz",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "5": {
-            "name": "Quirino",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "6": {
-            "name": "Pedro Gil",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "7": {
-            "name": "UN Avenue",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "8": {
-            "name": "Central",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "9": {
-            "name": "Carriedo",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "10": {
-            "name": "Doroteo Jose",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "11": {
-            "name": "Bambang",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "12": {
-            "name": "Tayuman",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "13": {
-            "name": "Blumentritt",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "14": {
-            "name": "Abad Santos",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "15": {
-            "name": "R. Papa",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "16": {
-            "name": "5th Avenue",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "17": {
-            "name": "Monumento",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "18": {
-            "name": "Balitntawak",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
-        "19": {
-            "name": "Roosevelt",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        }
-    }
+
+class Stations:
+
+    def __init__(self):
+        self.stations = [
+            Station(0, "Baclaran", 0, 0, 0, 0),
+            Station(1, "EDSA", 0, 0, 100, 0),
+            Station(2, "Libertad", 0, 0, 200, 0),
+            Station(3, "Gil Puyat", 0, 0, 300, 0),
+            Station(4, "Vito Cruz", 0, 0, 400, 0),
+            Station(5, "Quirino", 0, 0, 500, 0),
+            Station(6, "Perdo Gil", 0, 0, 600, 0),
+            Station(7, "UN Avenue", 0, 0, 700, 0),
+            Station(8, "Central", 0, 0, 800, 0),
+            Station(9, "Carriedo", 0, 0, 900, 0),
+            Station(10, "Doroteo Jose", 0, 0, 1000, 0),
+            Station(11, "Bambang", 0, 0, 1100, 0),
+            Station(12, "Tayuman", 0, 0, 1200, 0),
+            Station(13, "Blumentritt", 0, 0, 1300, 0),
+            Station(14, "Abad Santos", 0, 0, 1400, 0),
+            Station(15, "R. Papa", 0, 0, 1500, 0),
+            Station(16, "5th Avenue", 0, 0, 1600, 0),
+            Station(17, "Monumento", 0, 0, 1700, 0),
+            Station(18, "Balitntawak", 0, 0, 1800, 0),
+            Station(19, "Roosevelt", 0, 0, 1900, 0)
+        ]
+
+    def getAllStations(self):
+        return self.stations
+
+    def getAllStationsDict(self):
+        return [station.toDict() for station in self.stations]
