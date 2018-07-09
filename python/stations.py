@@ -1,3 +1,28 @@
+from flask import jsonify
+
+class Station:
+    
+    def __init__(self, index, name, latitude, longitude, position, load):
+        self.index = index
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.position = position
+        self.load = load
+
+    def toDict(self):
+        return {
+            "index": self.index,
+            "name": self.name,
+            "latitude": self.latitude,
+            "longitude": self.longitude,
+            "position": self.position,
+            "load": self.load
+        }
+
+    def toJson(self):
+        return jsonify(self.toDict())
+
 stations = {
         "0": {
             "name": "Baclaran",
