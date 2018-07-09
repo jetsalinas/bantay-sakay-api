@@ -9,6 +9,7 @@ from flask import Flask
 from flask import jsonify
 
 from python.stations import Stations
+from python.trains import Trains
 
 app = Flask(__name__)
 

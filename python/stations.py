@@ -19,10 +19,6 @@ class Station:
             "load": self.load
         }
 
-    def toJson(self):
-        return jsonify(self.toDict())
-
-
 class Stations:
 
     def __init__(self):
