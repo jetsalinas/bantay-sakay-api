@@ -1,33 +1,12 @@
-"""
-RESTFUL api for Hackatren Bantay Sakay app
-:Author:     Jose Salinas
-:Author:     Maded Batara III
-:Version:    v20180709
-"""
 
-from flask import Flask
-from flask import jsonify
-
-app = Flask(__name__)
-
-#######
-# APP #
-#######
-
-@app.route('/api/trains', methods=['GET'])
-def get_trains():
-    pass
-
-@app.route('/api/stations', methods=['GET'])
-def get_station_statistics():
-    stations = {
-        "0": {
-            "name": "Baclaran",
-            "latitude": 0,
-            "longitude": 0,
-            "position": 0,
-            "stationLoad": 0
-        },
+stations = {
+    "0": {
+        "name": "Baclaran",
+        "latitude": 0,
+        "longitude": 0,
+        "position": 0,
+        "stationLoad": 0
+    },
         "1": {
             "name": "EDSA",
             "latitude": 0,
@@ -105,56 +84,56 @@ def get_station_statistics():
             "position": 0,
             "stationLoad": 0
         },
-        "12": {
+        "10": {
             "name": "Tayuman",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "13": {
+        "10": {
             "name": "Blumentritt",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "14": {
+        "10": {
             "name": "Abad Santos",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "15": {
+        "10": {
             "name": "R. Papa",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "16": {
+        "10": {
             "name": "5th Avenue",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "17": {
+        "10": {
             "name": "Monumento",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "18": {
+        "10": {
             "name": "Balitntawak",
             "latitude": 0,
             "longitude": 0,
             "position": 0,
             "stationLoad": 0
         },
-        "19": {
+        "10": {
             "name": "Roosevelt",
             "latitude": 0,
             "longitude": 0,
@@ -162,12 +141,3 @@ def get_station_statistics():
             "stationLoad": 0
         }
     }
-
-    return jsonify(stations)
-
-@app.route('/api/statistics', methods=['GET'])
-def get_global_statistics():
-    pass
-
-if __name__ == "__main__":
-    app.run(debug=True)
