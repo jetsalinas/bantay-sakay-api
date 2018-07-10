@@ -8,8 +8,8 @@ RESTFUL api for Hackatren Bantay Sakay app
 from flask import Flask
 from flask import jsonify
 
-from python.stations import Stations
-from python.trains import Trains
+from python.stations import StationsService
+from python.trains import TrainsService
 
 app = Flask(__name__)
 
@@ -17,13 +17,13 @@ app = Flask(__name__)
 # APP #
 #######
 
-trains = Trains()
+trains = TrainsService()
 
 @app.route('/api/trains', methods=['GET'])
 def get_trains():
     return jsonify(trains.getAllTrainsDict())
 
-stations = Stations()
+stations = StationsService()
 
 @app.route('/api/stations', methods=['GET'])
 def get_station_statistics():

@@ -1,12 +1,15 @@
+from datetime import time
+
 class Station:
     
-    def __init__(self, index, name, latitude, longitude, position, load, comment=None):
+    def __init__(self, index, name, latitude, longitude, position, loadNorth, loadSouth, comment=None):
         self.index = index
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.position = position
-        self.load = load
+        self.loadNorth = loadNorth
+        self.loadSouth = loadSouth
         self.comment = comment
 
     def toDict(self):
@@ -16,33 +19,34 @@ class Station:
             "latitude": self.latitude,
             "longitude": self.longitude,
             "position": self.position,
-            "load": self.load
+            "loadNorth": self.loadNorth,
+            "loadSouth": self.loadSouth
         }
 
-class Stations:
+class StationsService:
 
     def __init__(self):
         self.stations = [
-            Station(0, "Baclaran", 0, 0, 0, 0),
-            Station(1, "EDSA", 0, 0, 100, 0),
-            Station(2, "Libertad", 0, 0, 200, 0),
-            Station(3, "Gil Puyat", 0, 0, 300, 0),
-            Station(4, "Vito Cruz", 0, 0, 400, 0),
-            Station(5, "Quirino", 0, 0, 500, 0),
-            Station(6, "Perdo Gil", 0, 0, 600, 0),
-            Station(7, "UN Avenue", 0, 0, 700, 0),
-            Station(8, "Central", 0, 0, 800, 0),
-            Station(9, "Carriedo", 0, 0, 900, 0),
-            Station(10, "Doroteo Jose", 0, 0, 1000, 0),
-            Station(11, "Bambang", 0, 0, 1100, 0),
-            Station(12, "Tayuman", 0, 0, 1200, 0),
-            Station(13, "Blumentritt", 0, 0, 1300, 0),
-            Station(14, "Abad Santos", 0, 0, 1400, 0),
-            Station(15, "R. Papa", 0, 0, 1500, 0),
-            Station(16, "5th Avenue", 0, 0, 1600, 0),
-            Station(17, "Monumento", 0, 0, 1700, 0),
-            Station(18, "Balitntawak", 0, 0, 1800, 0),
-            Station(19, "Roosevelt", 0, 0, 1900, 0)
+            Station(0, "Baclaran", 0, 0, 0, 0.3, 0),
+            Station(1, "EDSA", 0, 0, 100, 0.5, 0.1),
+            Station(2, "Libertad", 0, 0, 200, 0.3, 0.2),
+            Station(3, "Gil Puyat", 0, 0, 300, 0.6, 0.4),
+            Station(4, "Vito Cruz", 0, 0, 400, 0.3, 0.3),
+            Station(5, "Quirino", 0, 0, 500, 0.3, 0.3),
+            Station(6, "Perdo Gil", 0, 0, 600, 0.4, 0.3),
+            Station(7, "UN Avenue", 0, 0, 700, 0.2, 0.4),
+            Station(8, "Central", 0, 0, 800, 0.5, 0.3),
+            Station(9, "Carriedo", 0, 0, 900, 0.6, 0.2),
+            Station(10, "Doroteo Jose", 0, 0, 1000, 0.6, 0.7),
+            Station(11, "Bambang", 0, 0, 1100, 0.6, 0.3),
+            Station(12, "Tayuman", 0, 0, 1200, 0.5, 0.2),
+            Station(13, "Blumentritt", 0, 0, 1300, 0.4, 0.5),
+            Station(14, "Abad Santos", 0, 0, 1400, 0.3, 0.5),
+            Station(15, "R. Papa", 0, 0, 1500, 0.2, 0.3),
+            Station(16, "5th Avenue", 0, 0, 1600, 0.3, 0.2),
+            Station(17, "Monumento", 0, 0, 1700, 0.4, 0.2),
+            Station(18, "Balitntawak", 0, 0, 1800, 0.3, 0.4),
+            Station(19, "Roosevelt", 0, 0, 1900, 0, 0.3)
         ]
 
     def getAllStations(self):
@@ -50,3 +54,7 @@ class Stations:
 
     def getAllStationsDict(self):
         return [station.toDict() for station in self.stations]
+
+    def updateStationsRandom(self):
+
+        pass

@@ -18,7 +18,7 @@ class Train:
             "comment": self.comment
         }
 
-class Trains:
+class TrainsService:
 
     def __init__(self):
         self.trains = [
