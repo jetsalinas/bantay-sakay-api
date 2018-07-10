@@ -1,4 +1,5 @@
 from datetime import time
+import random
 
 class Station:
     
@@ -56,5 +57,13 @@ class StationsService:
         return [station.toDict() for station in self.stations]
 
     def updateStationsRandom(self):
+        deltaLoad = 0.01
+        for station in self.stations:
+            station.loadNorth += random.uniform(-deltaLoad, deltaLoad)
+            station.loadNorth = 1.1 if (station.loadNorth > 1.1) else station.loadNorth
+            station.loadNorth = 0 if (station.loadNorth < 0) else station.loadNorth  
 
-        pass
+            station.loadSouth += random.uniform(-deltaLoad, deltaLoad)
+            station.loadSouth = 1.1 if (station.loadSouth > 1.1) else station.loadSouth
+            station.loadSouth = 0 if (station.loadSouth < 0) else station.loadSouth  
+        

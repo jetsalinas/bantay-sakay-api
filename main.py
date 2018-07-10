@@ -27,6 +27,7 @@ stations = StationsService()
 
 @app.route('/api/stations', methods=['GET'])
 def get_station_statistics():
+    stations.updateStationsRandom()
     return jsonify(stations.getAllStationsDict())
 
 @app.route('/api/statistics', methods=['GET'])
