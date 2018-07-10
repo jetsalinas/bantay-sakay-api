@@ -1,8 +1,9 @@
 class Train:
 
-    def __init__(self, index, tag, position, load, status, comment=None):
+    def __init__(self, index, tag, direction, position, load, status, comment=None):
         self.index = index
         self.tag = tag
+        self.direction = direction
         self.position = position
         self.load = load
         self.status = status
@@ -12,6 +13,7 @@ class Train:
         return {
             "index": self.index,
             "tag": self.tag,
+            "direction": self.direction,
             "position": self.position,
             "load": self.load,
             "status": self.status,
@@ -22,7 +24,7 @@ class TrainsService:
 
     def __init__(self):
         self.trains = [
-            Train(0, "ABC", 0, 0, 0)
+            Train(0, "ABC", 1, 0, 0, 0)
         ]
 
     def getAllTrainsDict(self):
