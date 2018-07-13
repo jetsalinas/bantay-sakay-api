@@ -10,6 +10,7 @@ from flask import jsonify
 
 from python.stations import StationsService
 from python.trains import TrainsService
+from python.statistics import Statistics
 
 app = Flask(__name__)
 
@@ -32,9 +33,13 @@ def get_station_statistics():
     stations.updateStationsRandom()
     return jsonify(stations.getAllStationsDict())
 
+statistics = Statistics()
+
 @app.route('/api/statistics', methods=['GET'])
 def get_global_statistics():
-    pass
+    statistics.updateCycleTimeRandom()
+    statistics.updateHeadwayTimeRandom()
+    return jsonify(statistics.toDict())
 
 if __name__ == "__main__":
     app.run(debug=True)
