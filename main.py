@@ -22,6 +22,7 @@ trains = TrainsService()
 @app.route('/api/trains', methods=['GET'])
 def get_trains():
     trains.updateTrainsPositionConst()
+    trains.updateTrainLoadRandom()
     return jsonify(trains.getAllTrainsDict())
 
 stations = StationsService()

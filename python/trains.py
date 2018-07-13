@@ -1,3 +1,5 @@
+import random
+
 class Train:
 
     def __init__(self, index, tag, direction, position, load, status, comment=None):
@@ -24,27 +26,30 @@ class TrainsService:
 
     def __init__(self):
         self.trains = [
-            Train(0, "A-1", 1, 0, 0.0, 0),
-            Train(0, "B-1", 1, 100, 0.3, 0),
-            Train(0, "C-1", 1, 200, 0.3, 0),
-            Train(0, "D-1", 1, 300, 0.7, 0),
-            Train(0, "E-1", 1, 400, 0.9, 0),
-            Train(0, "F-1", 1, 500, 0.9, 0),
-            Train(0, "G-1", 1, 600, 0.7, 0),
-            Train(0, "H-1", 1, 700, 0.8, 0),
-            Train(0, "I-1", 1, 800, 0.7, 0),
-            Train(0, "J-1", 1, 900, 0.3, 0),
-            Train(0, "K-1", 1, 1000, 0.6, 0),
-            Train(0, "L-1", 1, 1100, 0.5, 0),
-            Train(0, "M-1", 1, 1200, 0.7, 0),
-            Train(0, "N-1", 1, 1300, 0.8, 0),
-            Train(0, "O-1", 1, 1400, 0.6, 0),
-            Train(0, "P-1", 1, 1500, 0.5, 0),
-            Train(0, "Q-1", 1, 1600, 0.7, 0),
-            Train(0, "R-1", 1, 1700, 0.8, 0),
-            Train(0, "S-1", 1, 1800, 0.9, 0),
-            Train(0, "T-1", 1, 1900, 0.3, 0)
+            Train(0, "A-1", 1, 0, 0.5, 1),
+            Train(1, "B-1", 1, 100, 0.3, 1),
+            Train(2, "C-1", 1, 200, 0.3, 1),
+            Train(3, "D-1", 1, 300, 0.7, 1),
+            Train(4, "E-1", 1, 400, 0.9, 1),
+            Train(5, "F-1", 1, 500, 0.9, 1),
+            Train(6, "G-1", 1, 600, 0.7, 1),
+            Train(7, "H-1", 1, 700, 0.8, 1),
+            Train(8, "I-1", 1, 800, 0.7, 1),
+            Train(9, "J-1", 1, 900, 0.3, 1),
+            Train(10, "K-1", 1, 1000, 0.6, 1),
+            Train(11, "L-1", 1, 1100, 0.5, 1),
+            Train(12, "M-1", 1, 1200, 0.7, 1),
+            Train(13, "N-1", 1, 1300, 0.8, 1),
+            Train(14, "O-1", 1, 1400, 0.6, 1),
+            Train(15, "P-1", 1, 1500, 0.5, 1),
+            Train(16, "Q-1", 1, 1600, 0.7, 1),
+            Train(17, "R-1", 1, 1700, 0.8, 1),
+            Train(18, "S-1", 1, 1800, 0.9, 1),
+            Train(19, "T-1", 1, 1900, 0.3, 1)
         ]
+
+        self.stationPositions = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900]
+
 
     def getAllTrainsDict(self):
         return [train.toDict() for train in self.trains ]
@@ -52,7 +57,7 @@ class TrainsService:
     def updateTrainsPositionConst(self):
         deltaPos = 10
         for train in self.trains:
-            if train.direction == 0:
+            if train.direction == 0 or train.status == 0:
                 continue
             if train.direction == 1:
                 if train.position == 1900:
@@ -65,3 +70,10 @@ class TrainsService:
                 else:
                     train.position -= 10
 
+    def updateTrainLoadRandom(self):
+        deltaLoad = 0.4
+        for train in self.trains:
+            if train.position in self.stationPositions and train.status != 0:
+                train.load += random.uniform(-deltaLoad, deltaLoad)
+                train.load = 1.1 if (train.load > 1.1) else train.load
+                train.load = 0 if (train.load < 0) else train.load  
