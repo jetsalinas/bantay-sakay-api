@@ -56,6 +56,12 @@ class AttractionService:
     def getAttractions(self):
         return [attraction.toDict() for attraction in self.attractions]
 
+
+    def getAttraction(self, attractionName):
+        for attraction in self.attractions:
+            if attraction.name == attractionName:
+                return attraction.toDict()
+
     def getAttractionsPerStation(self):
         
         result = []

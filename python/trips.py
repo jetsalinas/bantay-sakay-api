@@ -28,7 +28,7 @@ class Trips:
 
     def __init__(self, attractions):
         self.trips = [
-            Trip("Museum Run", "description", [TripNode(0, attractions[0])
+            Trip("Museum Run", "Discover a series of Manila's finest museums", [TripNode(0, attractions[0])
 
             ])
         ]

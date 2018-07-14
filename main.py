@@ -52,6 +52,10 @@ attractions = AttractionService()
 def get_attractions():
     return jsonify(attractions.getAttractions())
 
+@app.route('/api/attractions/<attractionName>', methods=['GET'])
+def get_attraction(attractionName):
+    return jsonify(attractions.getAttraction(attractionName))
+
 @app.route('/api/attractionsperstation', methods=['GET'])
 def get_attractions_per_station():
     return jsonify(attractions.getAttractionsPerStation())
