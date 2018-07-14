@@ -95,7 +95,7 @@ class TrainsService:
 
         for c, position in enumerate(self.stationPositions):
             if train.position == position:
-                train.station = self.stationNames[c]
+                self.station = self.stationNames[c]
 
     def updateTrainLoadRandom(self):
         deltaLoad = 0.4
