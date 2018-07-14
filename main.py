@@ -15,6 +15,7 @@ from python.trains import TrainsService
 from python.statistics import Statistics
 from python.attractions import AttractionService
 from python.trips import Trips
+from python.trainsETA import TrainsETAService
 
 app = Flask(__name__)
 CORS(app=app)
@@ -68,6 +69,12 @@ trips = Trips(attractions.attractions)
 @app.route('/api/trips', methods=['GET'])
 def get_trips():
     return jsonify(trips.toDict())
+
+eta = TrainsETAService()
+@app.route('/api/eta', methods=['GET'])
+def get_eta():
+    eta.updateETA()
+    return jsonify(eta.toDict())
 
 if __name__ == "__main__":
     app.run(debug=True)
