@@ -8,11 +8,14 @@ RESTFUL api for Hackatren Bantay Sakay app
 from flask import Flask
 from flask import jsonify
 
+from flask_cors import CORS
+
 from python.stations import StationsService
 from python.trains import TrainsService
 from python.statistics import Statistics
 
 app = Flask(__name__)
+CORS(app=app)
 
 #######
 # APP #
