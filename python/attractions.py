@@ -55,3 +55,39 @@ class AttractionService:
 
     def getAttractions(self):
         return [attraction.toDict() for attraction in self.attractions]
+
+    def getAttractionsPerStation(self):
+        
+        result = []
+        
+        stationNames = [
+            "Baclaran",
+            "EDSA",
+            "Libertad",
+            "Gil Puyat",
+            "Vito Cruz",
+            "Quirino",
+            "Pedro Gil",
+            "UN Avenue",
+            "Central",
+            "Carriedo",
+            "Doroteo Jose",
+            "Bambang",
+            "Tayuman",
+            "Blumentritt",
+            "Abad Santos",
+            "R. Papa",
+            "5th Avenue",
+            "Monumento",
+            "Banlintawak",
+            "Roosevelt"
+        ]
+
+        for i in stationNames:
+            stationArr = []
+            for j in self.attractions:
+                if i == j.stationName:
+                    stationArr.append({"stationName": i, "data": j.toDict()})
+            if stationArr != []:
+                result.append(stationArr)
+        return result
