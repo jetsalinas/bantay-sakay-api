@@ -14,6 +14,7 @@ from python.stations import StationsService
 from python.trains import TrainsService
 from python.statistics import Statistics
 from python.attractions import AttractionService
+from python.trips import Trips
 
 app = Flask(__name__)
 CORS(app=app)
@@ -51,6 +52,10 @@ attractions = AttractionService()
 def get_attractions():
     return jsonify(attractions.getAttractions())
 
+trips = Trips(attractions.attractions)
+@app.route('/api/trips', methods=['GET'])
+def get_trips():
+    return jsonify(trips.toDict())
 
 if __name__ == "__main__":
     app.run(debug=True)
