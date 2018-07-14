@@ -97,3 +97,12 @@ class AttractionService:
             if stationArr != []:
                 result.append(stationArr)
         return result
+
+    def getAttractionPerStation(self, station):
+        result = []
+        station = int(station)
+        for attraction in self.attractions:
+            if station == attraction.stationIndex:
+                result.append(attraction.toDict())
+
+        return result
